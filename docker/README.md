@@ -19,7 +19,7 @@ The Go image runs the API, Admin, Ingestor, and Syncer modes from the single `bi
 - **docker-compose.yml**
   Starts the Go RAGFlow container together with the selected dependencies.
 - **docker-compose-base.yml**
-  Defines the dependency services. The default Go profile uses Elasticsearch, MySQL, MinIO, Kvrocks, NATS, and ClickHouse. Other document engines and metadata databases are selected through `.env`.
+  Defines the dependency services. The default Go deployment uses Infinity, MySQL, MinIO, Kvrocks, and NATS. Select the document engine and metadata database through `.env`.
 
 > **Note:** `docker-compose-macos.yml` are not the Go deployment entry points. Use `docker-compose.yml` on a Linux x86-64 host; macOS is temporarily not supported by the Go backend.
 
@@ -43,7 +43,7 @@ git checkout v1.0.0
 docker compose -f docker-compose.yml up -d
 ```
 
-If you use the default Elasticsearch document engine on Linux, set `vm.max_map_count` to at least `262144` on the Docker host:
+If you select Elasticsearch on Linux, set `vm.max_map_count` to at least `262144` on the Docker host:
 
 ```bash
 sudo sysctl -w vm.max_map_count=262144
