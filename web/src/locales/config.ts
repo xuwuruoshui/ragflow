@@ -1,3 +1,4 @@
+import { appName } from '@/conf.json';
 import { LanguageAbbreviation } from '@/constants/common';
 import storage from '@/utils/authorization-util';
 import dayjs from 'dayjs';
@@ -70,9 +71,14 @@ const resources = {
   ),
 };
 
+/** 同步浏览器标题、文档语言与日期格式。 */
 const updateDocumentLocale = (lng: string) => {
   document.documentElement.lang = lng;
   document.documentElement.dir = 'ltr';
+  document.title = i18n.t('common.platformName', {
+    lng,
+    defaultValue: appName,
+  });
   dayjs.locale(lng === 'zh' ? 'zh-cn' : lng);
 };
 

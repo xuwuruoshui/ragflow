@@ -7,7 +7,7 @@ sidebar_custom_props: {
 ---
 # HTTP API
 
-A complete reference for RAGFlow's RESTful API, including migration notes for RAGFlow 1.0. Before proceeding, please ensure you [have your RAGFlow API key ready for authentication](https://ragflow.io/docs/dev/acquire_ragflow_api_key).
+A reference for the knowledge base platform's REST API, including migration notes for version 1.0. To obtain an API key for authentication, open **API** in your account settings and create or copy a key.
 
 In the standard response envelope, `message` is always a non-empty string. Successful responses default to `"success"`; error responses contain a description of the error.
 
@@ -23,7 +23,7 @@ cannot disable pagination. All paginated endpoints default to `30` items per pag
 
 ## ERROR CODES
 
-RAGFlow responses may contain both an HTTP status code and a business code in the JSON response body. These codes should be checked separately.
+API responses may contain both an HTTP status code and a business code in the JSON response body. Check these codes separately.
 
 ### HTTP status codes
 
@@ -61,19 +61,19 @@ RAGFlow responses may contain both an HTTP status code and a business code in th
 
 ## Migrate to 1.0
 
-RAGFlow 1.0 updates the public REST API. Use the canonical endpoints documented below.
+Version 1.0 updates the public REST API. Use the canonical endpoints documented below.
 
 The following changes require client updates:
 
-| Area | RAGFlow 1.0 change | Client action |
+| Area | Version 1.0 change | Client action |
 |------|------------------------|---------------|
 | Dataset parser selection | Dataset create and update use `parse_type` with `parser_id` (BuiltIn) or `pipeline_id` (Pipeline); responses use the canonical value `general` instead of the legacy `chunk_method: "naive"`. | Replace `chunk_method` with `"parse_type": 1` and `"parser_id": "<builtin parser>"`. For the general parser, send `"parser_id": "general"`. |
-| Dataset parser configuration | RAGFlow stores and returns component-scoped parser settings. Most legacy top-level `parser_config` fields are not mapped into that component structure. | Read the returned component map and send component-scoped keys when changing parser settings. |
+| Dataset parser configuration | The platform stores and returns component-scoped parser settings. Most legacy top-level `parser_config` fields are not mapped into that component structure. | Read the returned component map and send component-scoped keys when changing parser settings. |
 | Errors and authentication | Some validation business codes, messages, and authentication HTTP statuses differ from earlier releases. | Branch on documented codes rather than exact message text. |
 
 ### Removed API aliases
 
-The following endpoint aliases are not available in RAGFlow 1.0. Use their replacements below.
+The following endpoint aliases are not available in version 1.0. Use their replacements below.
 
 | Removed endpoint                                                                  | Replacement endpoint                                                                |
 |-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
@@ -264,7 +264,7 @@ Failure:
 ### Create OpenAI-compatible agent completion
 
 :::caution REMOVED ALIAS
-RAGFlow 1.0 does not serve `POST /api/v1/agents_openai/{agent_id}/chat/completions`. Use the endpoint below and move `agent_id` into the request body.
+Version 1.0 does not serve `POST /api/v1/agents_openai/{agent_id}/chat/completions`. Use the endpoint below and move `agent_id` into the request body.
 :::
 
 **POST** `/api/v1/agents/chat/completions`
@@ -622,7 +622,7 @@ curl --request POST \
   - Must be omitted when `"parse_type"` is `2`.
 
 - `"parser_config"`: `object`
-  The configuration settings for the dataset parser. RAGFlow 1.0 stores parser settings per ingestion-pipeline component; use component-scoped keys (keys containing `:`) as returned by the API. Legacy flat keys are ignored.
+  The configuration settings for the dataset parser. In version 1.0, parser settings are stored per ingestion-pipeline component. Use component-scoped keys (keys containing `:`) as returned by the API. Legacy flat keys are ignored.
 
 - `"parse_type"`: `int`, *Required*
   The parser selection mode:
@@ -630,7 +630,7 @@ curl --request POST \
   - `2`: Pipeline. Requires `"pipeline_id"`.
 
 - `"pipeline_id"`: `string`
-  The ingestion pipeline ID. Can be found in the corresponding URL in the RAGFlow UI.
+  The ingestion pipeline ID. Find it in the URL of the corresponding pipeline page.
   - Required when `"parse_type"` is `2`.
   - Must be a 32-character lowercase hexadecimal string, e.g., `"d0bebe30ae2211f0970942010a8e0005"`.
   - Must be omitted when `"parse_type"` is `1`.
@@ -641,7 +641,7 @@ curl --request POST \
 - `"parse_type": 1` with `"parser_id"` for a builtin parser.
 - `"parse_type": 2` with `"pipeline_id"` for an ingestion pipeline.
 
-`"chunk_method"`, `"avatar"`, `"description"`, and `"auto_metadata_config"` are not accepted by the RAGFlow 1.0 create endpoint. Use `"parser_id"` instead of `"chunk_method"`; set avatar and description with the update endpoint, and metadata configuration with the metadata endpoint.
+`"chunk_method"`, `"avatar"`, `"description"`, and `"auto_metadata_config"` are not accepted by the version 1.0 create endpoint. Use `"parser_id"` instead of `"chunk_method"`. Set the avatar and description with the update endpoint, and metadata configuration with the metadata endpoint.
 :::
 
 #### Response
@@ -659,7 +659,7 @@ Success:
         "embedding_model": "BAAI/bge-large-zh-v1.5@BAAI",
         "id": "3b4de7d4241d11f0a6a79f24fc270c7f",
         "language": "English",
-        "name": "RAGFlow example",
+        "name": "Example dataset",
         "pagerank": 0,
         "parser_config": {
             "GeneralChunker:SixApplesFall": {
@@ -825,7 +825,7 @@ curl --request PUT \
   - `"me"`: (Default) Only you can manage the dataset.
   - `"team"`: All team members can manage the dataset.
 - `"pagerank"`: (*Body parameter*), `int`
-  Refer to [Set page rank](https://ragflow.io/docs/dev/dataset_configuration).
+  A higher PageRank score improves the ranking of retrieved chunks from this dataset.
   - Default: `0`
   - Minimum: `0`
   - Maximum: `100`
@@ -836,9 +836,9 @@ curl --request PUT \
 - `"pipeline_id"`: (*Body parameter*), `string`
   The ingestion pipeline ID. Required when `parse_type` is `2`; must be omitted when `parse_type` is `1`.
 - `"parser_config"`: (*Body parameter*), `object`
-  The configuration settings for the dataset parser. RAGFlow 1.0 stores parser settings per ingestion-pipeline component; use component-scoped keys (keys containing `:`) as returned by the API. Legacy flat keys are ignored.
+  The configuration settings for the dataset parser. In version 1.0, parser settings are stored per ingestion-pipeline component. Use component-scoped keys (keys containing `:`) as returned by the API. Legacy flat keys are ignored.
 
-`chunk_method` is not supported by RAGFlow 1.0; use `parse_type` together with `parser_id` or `pipeline_id`.
+`chunk_method` is not supported in version 1.0. Use `parse_type` together with `parser_id` or `pipeline_id`.
 
 
 #### Response
@@ -1332,7 +1332,7 @@ Downloads a document from a specified dataset.
 curl --request GET \
      --url http://{address}/api/v1/datasets/{dataset_id}/documents/{document_id} \
      --header 'Authorization: Bearer <YOUR_API_KEY>' \
-     --output ./ragflow.txt
+     --output ./document.txt
 ```
 
 ##### Path parameters
@@ -2475,7 +2475,7 @@ curl --request POST \
      --header 'Authorization: Bearer <YOUR_API_KEY>' \
      --data '
      {
-          "question": "What is advantage of ragflow?",
+          "question": "What are the advantages of a knowledge base?",
           "dataset_ids": ["b2a62730759d11ef987d0242ac120004"],
           "document_ids": ["77df9ef4759a11ef8bdd0242ac120004"],
           "knn_top_k": 1024,
@@ -2577,11 +2577,11 @@ Success:
     "data": {
         "chunks": [
             {
-                "content": "ragflow content",
-                "content_ltks": "ragflow content",
+                "content": "example content",
+                "content_ltks": "example content",
                 "document_id": "5c5999ec7be811ef9cab0242ac120005",
                 "document_keyword": "1.txt",
-                "highlight": "<em>ragflow</em> content",
+                "highlight": "<em>example</em> content",
                 "id": "d78435d142bd5cf6704da62c778795c5",
                 "image_id": "",
                 "important_keywords": [
@@ -3928,7 +3928,7 @@ curl --request POST \
 - `"llm_id"`: `string`
   Optional model override when a specific chat model should be used for this request.
 - `"legacy"`: `boolean`
-  Defaults to `false`. Enables backward compatibility with RAGFlow v0.23.0 for streaming responses. When set to `true`:
+  Defaults to `false`. Enables compatibility with the version 0.23.0 streaming response format. When set to `true`:
   - Cumulative output: The `"answer"` field in each chunk returns the entire text generated so far, rather than just the new tokens (deltas).
   - No reasoning markers: The `start_to_think` and `end_to_think` signals are stripped from the stream.
 
@@ -4507,7 +4507,7 @@ curl --request POST \
 - `"inputs"`: `object`
   Values for variables defined in the **Begin** component. Each variable value must be an object containing a `"value"` field and may include a `"type"` field.
 - `"files"`: `array`
-  File descriptors returned by the Agent file upload endpoint. RAGFlow makes the uploaded files available to the Agent through `sys.files`.
+  File descriptors returned by the Agent file upload endpoint. The uploaded files are available to the Agent through `sys.files`.
 - `"user_id"`: `string`
   The optional user-defined ID. Valid *only* when no `session_id` is provided.
 - `"chat_template_kwargs"`: `object`
@@ -5142,9 +5142,7 @@ Generates five to ten alternative question strings from the user's original quer
 `POST /api/v1/sessions/related_questions` is not available in 1.0. Use this endpoint instead.
 :::
 
-This operation requires a `Bearer Login Token`, which typically expires with in 24 hours. You can find it in the Request Headers in your browser easily as shown below:
-
-![Image](https://raw.githubusercontent.com/infiniflow/ragflow-docs/main/images/login_token.jpg)
+This operation requires a bearer login token, which typically expires within 24 hours. To find it, open the **Network** tab in your browser's developer tools and inspect the **Authorization** request header of an authenticated request.
 
 :::tip NOTE
 The chat model autonomously determines the number of questions to generate based on the instruction, typically between five and ten.
@@ -6644,7 +6642,7 @@ Failure
 
 **GET** `/api/v1/system/healthz`
 
-Check the health status of RAGFlow's dependencies: metadata database, Kvrocks cache, document engine, object storage, and NATS message queue.
+Check the health of the platform's metadata database, Kvrocks cache, document engine, object storage, and NATS message queue.
 
 :::caution REMOVED ALIAS
 `GET /v1/system/healthz` is not available in 1.0. Use this endpoint instead.

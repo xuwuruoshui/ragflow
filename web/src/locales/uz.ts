@@ -1,6 +1,7 @@
 export default {
   translation: {
     common: {
+      platformName: 'Bilimlar bazasi platformasi',
       confirm: 'Tasdiqlash',
       back: 'Orqaga',
       noResults: 'Natijalar topilmadi',
@@ -113,7 +114,7 @@ export default {
       nicknamePlaceholder: 'Iltimos, taxallusni kiriting',
       register: 'Hisob yaratish',
       continue: 'Davom etish',
-      title: 'LLM konteksti uchun yetakchi RAG dvigateli',
+      title: 'Bilimlaringizni qidiring va boshqaring',
       start: 'Keling, boshlaymiz',
       description:
         'Eng yaxshi RAG texnologiyasini o‘rganish uchun bepul ro‘yxatdan o‘ting. Biznesingizni kuchaytirish uchun ma’lumotlar to‘plamlari va sun’iy intellektlar yarating.',
@@ -135,9 +136,6 @@ export default {
       welcome: 'Xush kelibsiz',
       dataset: 'Ma’lumotlar to‘plami',
       memories: 'Xotira',
-      discord: 'Discord',
-      github: 'GitHub',
-      help: 'Yordam',
     },
     skills: {
       title: 'Ko‘nikmalar',
@@ -536,7 +534,7 @@ export default {
       testSetting: 'Sozlash',
       retrievalTesting: 'Qidiruv testi',
       retrievalTestingDescription:
-        'RAGFlow LLM uchun mo‘ljallangan kontentni qaytarib olishini tekshirish uchun qidiruv testini o‘tkazing.',
+        'Platforma LLM uchun mo‘ljallangan kontentni qaytarib olishini tekshirish uchun qidiruv testini o‘tkazing.',
       Parse: 'Tahlil qilish',
       dataset: 'Ma’lumotlar to‘plami',
       testing: 'Qidiruv testi',
@@ -563,7 +561,7 @@ export default {
       action: 'Amal',
       parsingStatus: 'Tahlil holati',
       parsingStatusTip:
-        'Hujjatni tahlil qilish vaqti bir qancha omillarga bog‘liq. Bilimlar grafi, RAPTOR, avtomatik savol ajratish yoki avtomatik kalit so‘z ajratish kabi funksiyalarni yoqish qayta ishlash vaqtini sezilarli oshiradi. Agar progress bar to‘xtab qolsa, ushbu ikkita FAQ’ga murojaat qiling: https://ragflow.io/docs/dev/faq#why-does-my-document-parsing-stall-at-under-one-percent.',
+        'Hujjatni tahlil qilish vaqti bir qancha omillarga bog‘liq. Bilimlar grafi, RAPTOR, avtomatik savol ajratish yoki avtomatik kalit so‘z ajratish kabi funksiyalarni yoqish qayta ishlash vaqtini sezilarli oshiradi.',
       processBeginAt: 'Boshlanish vaqti',
       processDuration: 'Davomiylik',
       progressMsg: 'Progress',
@@ -572,10 +570,10 @@ export default {
       noTestResultsForNotRuned:
         'Hali test o‘tkazilmagan. Natijalar shu yerda paydo bo‘ladi.',
       testingDescription:
-        'RAGFlow LLM uchun mo‘ljallangan kontentni qaytarib olishini tekshirish uchun qidiruv testini o‘tkazing. Optimal natijalarga erishish uchun standart sozlamalarni (masalan, kalit so‘z o‘xshashlik og‘irligi yoki o‘xshashlik chegarasi) o‘zgartirgan bo‘lsangiz, bu o‘zgarishlar avtomatik saqlanmasligini yodda tuting. Ularni chat yordamchisi sozlamalariga yoki Qidiruv agent komponenti sozlamalariga qo‘llashingiz kerak.',
+        'Platforma LLM uchun mo‘ljallangan kontentni qaytarib olishini tekshirish uchun qidiruv testini o‘tkazing. Optimal natijalarga erishish uchun standart sozlamalarni (masalan, kalit so‘z o‘xshashlik og‘irligi yoki o‘xshashlik chegarasi) o‘zgartirgan bo‘lsangiz, bu o‘zgarishlar avtomatik saqlanmasligini yodda tuting. Ularni chat yordamchisi sozlamalariga yoki Qidiruv agent komponenti sozlamalariga qo‘llashingiz kerak.',
       similarityThreshold: 'O‘xshashlik chegarasi',
       similarityThresholdTip:
-        'RAGFlow qidiruvda vaznli kalit so‘z o‘xshashligi va vaznli vektor kosinus o‘xshashligi kombinatsiyasidan, yoki reranker modeli tanlanganda vaznli kalit so‘z o‘xshashligi va vaznli qayta reyting balli kombinatsiyasidan foydalanadi. Bu parametr foydalanuvchi so‘rovi va bo‘laklar o‘rtasidagi o‘xshashlik chegarasini belgilaydi. Bu chegaramdan past ball olgan bo‘lak natijalardan chiqarib tashlanadi. Standart bo‘yicha chegara 20 ga teng: gibrid o‘xshashlik balli 20 yoki undan yuqori bo‘lgan bo‘laklargina qidirib olinadi. Agar vektor o‘xshashligi vazni 0 qilib belgilansa, bu chegara qo‘llanilmaydi.',
+        'Platforma qidiruvda vaznli kalit so‘z o‘xshashligi va vaznli vektor kosinus o‘xshashligi kombinatsiyasidan, yoki reranker modeli tanlanganda vaznli kalit so‘z o‘xshashligi va vaznli qayta reyting balli kombinatsiyasidan foydalanadi. Bu parametr foydalanuvchi so‘rovi va bo‘laklar o‘rtasidagi o‘xshashlik chegarasini belgilaydi. Bu chegaramdan past ball olgan bo‘lak natijalardan chiqarib tashlanadi. Standart bo‘yicha chegara 20 ga teng: gibrid o‘xshashlik balli 20 yoki undan yuqori bo‘lgan bo‘laklargina qidirib olinadi. Agar vektor o‘xshashligi vazni 0 qilib belgilansa, bu chegara qo‘llanilmaydi.',
       vectorSimilarityWeight: 'Vektor o‘xshashlik og‘irligi',
       vectorSimilarityWeightTip:
         'Bu gibrid o‘xshashlik ballida vektor o‘xshashligi vaznini belgilaydi — u vektor kosinus o‘xshashligi yoki qayta reyting balli bilan birga ishlatiladi. Ikki vazn yig‘indisi aynan 1.0 bo‘lishi kerak.',
@@ -625,7 +623,7 @@ export default {
       changeSpecificCategory: 'Aniq toifani o‘zgartirish',
       uploadTitle: 'Yuklash uchun faylingizni bu yerga sudrab tashlang',
       uploadDescription:
-        'Bitta yoki ommaviy fayl yuklash qo‘llab-quvvatlanadi. Lokal joylashtirilgan RAGFlow uchun: har bir yuklashda umumiy fayl hajmi chegarasi 1GB, ommaviy yuklash chegarasi 32 fayl. Hisob uchun fayllar umumiy sonining chegarasi yo‘q. cloud.ragflow.io uchun: har bir yuklashda umumiy fayl hajmi chegarasi 10MB, har bir fayl 10MB dan oshmasligi va hisob uchun maksimum 128 fayl.',
+        'Bitta yoki ommaviy fayl yuklash qo‘llab-quvvatlanadi. Lokal joylashtirilgan platforma uchun: har bir yuklashda umumiy fayl hajmi chegarasi 1GB, ommaviy yuklash chegarasi 32 fayl. Hisob uchun fayllar umumiy sonining chegarasi yo‘q. bulut xizmati uchun: har bir yuklashda umumiy fayl hajmi chegarasi 10MB, har bir fayl 10MB dan oshmasligi va hisob uchun maksimum 128 fayl.',
       chunk: 'Bo‘lak',
       bulk: 'Ommaviy',
       cancel: 'Bekor qilish',
@@ -633,7 +631,7 @@ export default {
       rerankModel: 'Rerank modeli',
       rerankPlaceholder: 'Qiymatni tanlang',
       rerankTip:
-        'Ixtiyoriy. Bo‘sh qoldirilsa, RAGFlow vaznli kalit so‘z o‘xshashligi va vaznli vektor kosinus o‘xshashligi kombinatsiyasidan foydalanadi; rerank modeli tanlansa, vaznli qayta reyting balli vaznli vektor kosinus o‘xshashligini almashtiradi. Rerank modelidan foydalanish tizimning javob vaqtini sezilarli oshirishini yodda tuting.',
+        'Ixtiyoriy. Bo‘sh qoldirilsa, platforma vaznli kalit so‘z o‘xshashligi va vaznli vektor kosinus o‘xshashligi kombinatsiyasidan foydalanadi; rerank modeli tanlansa, vaznli qayta reyting balli vaznli vektor kosinus o‘xshashligini almashtiradi. Rerank modelidan foydalanish tizimning javob vaqtini sezilarli oshirishini yodda tuting.',
       topK: 'Top-K',
       topKTip:
         'Rerank modeli bilan birga ishlatiladi; bu sozlama belgilangan rerank modeliga yuboriladigan matn bo‘laklari sonini aniqlaydi.',
@@ -650,13 +648,13 @@ export default {
       delimiterPreviewCount: '({{count}})',
       html4excel: 'Excel’dan HTML’ga',
       html4excelTip:
-        'Umumiy bo‘laklash usuli bilan ishlatiladi. O‘chirilganda, to‘plamdagi elektron jadvallar (XLSX yoki XLS (Excel 97-2003)) kalit-qiymat juftliklariga tahlil qilinadi. Yoqilganda, ular HTML jadvallarga tahlil qilinadi va agar original jadval 12 qatordan ko‘p bo‘lsa, har 12 qatorda bo‘linadi. Tafsilotlar uchun https://ragflow.io/docs/dataset_configuration#other-format-processing-configuration ga qarang.',
+        'Umumiy bo‘laklash usuli bilan ishlatiladi. O‘chirilganda, to‘plamdagi elektron jadvallar (XLSX yoki XLS (Excel 97-2003)) kalit-qiymat juftliklariga tahlil qilinadi. Yoqilganda, ular HTML jadvallarga tahlil qilinadi va agar original jadval 12 qatordan ko‘p bo‘lsa, har 12 qatorda bo‘linadi.',
       autoKeywords: 'Ajratib olinadigan kalit so‘zlar soni',
       autoKeywordsTip:
-        'Har bir bo‘lak uchun N ta kalit so‘zni avtomatik ajratib olib, ushbu kalit so‘zlarni o‘z ichiga olgan so‘rovlar uchun ularning reytingini oshiradi. ‘Sozlash’da belgilangan indekslash modeli tomonidan qo‘shimcha tokenlar sarflanishini yodda tuting. Bo‘lak uchun qo‘shilgan kalit so‘zlarni bo‘laklar ro‘yxatidan tekshirishingiz yoki yangilashingiz mumkin. Tafsilotlar uchun https://ragflow.io/docs/dataset_configuration#content-enhancement-configuration ga qarang.',
+        'Har bir bo‘lak uchun N ta kalit so‘zni avtomatik ajratib olib, ushbu kalit so‘zlarni o‘z ichiga olgan so‘rovlar uchun ularning reytingini oshiradi. ‘Sozlash’da belgilangan indekslash modeli tomonidan qo‘shimcha tokenlar sarflanishini yodda tuting. Bo‘lak uchun qo‘shilgan kalit so‘zlarni bo‘laklar ro‘yxatidan tekshirishingiz yoki yangilashingiz mumkin.',
       autoQuestions: 'Avto-savollar soni',
       autoQuestionsTip:
-        'Har bir bo‘lak uchun N ta savolni avtomatik ajratib olib, ushbu savollarni o‘z ichiga olgan so‘rovlar uchun ularning reytingini oshiradi. Qo‘shilgan savollarni bo‘laklar ro‘yxatidan tekshirishingiz yoki yangilashingiz mumkin. Xato yuz bersa, bu funksiya bo‘laklash jarayonini buzmaydi, faqat original bo‘lakka bo‘sh natija qo‘shilishi mumkin. ‘Sozlash’da belgilangan indekslash modeli tomonidan qo‘shimcha tokenlar sarflanishini yodda tuting. Tafsilotlar uchun https://ragflow.io/docs/dataset_configuration#content-enhancement-configuration ga qarang.',
+        'Har bir bo‘lak uchun N ta savolni avtomatik ajratib olib, ushbu savollarni o‘z ichiga olgan so‘rovlar uchun ularning reytingini oshiradi. Qo‘shilgan savollarni bo‘laklar ro‘yxatidan tekshirishingiz yoki yangilashingiz mumkin. Xato yuz bersa, bu funksiya bo‘laklash jarayonini buzmaydi, faqat original bo‘lakka bo‘sh natija qo‘shilishi mumkin. ‘Sozlash’da belgilangan indekslash modeli tomonidan qo‘shimcha tokenlar sarflanishini yodda tuting.',
       autoTags: 'Avtomatik teglar',
       redo: 'Mavjud {{chunkNum}} bo‘lakni tozalashni xohlaysizmi?',
       setMetaData: 'Metadatani belgilash',
@@ -783,7 +781,7 @@ export default {
       tableColumnModeAuto: 'Avtomatik',
       tableColumnModeManual: 'Qo‘lda',
       tableColumnModeAutoDescription:
-        'Barcha ustunlar bo‘lak matniga kiritiladi va metadata sifatida saqlanadi (RAGFlow standarti).',
+        'Barcha ustunlar bo‘lak matniga kiritiladi va metadata sifatida saqlanadi (standart sozlama).',
       tableColumnRoles: 'Ustun rollari',
       tableColumnRolesTip:
         'Qaysi ustunlar bo‘lak matniga kiritilishini (vektor va to‘liq matn qidiruvi uchun indekslanadi), faqat metadatada qolishini (filtrlanadigan) yoki ikkalasini ham tanlang. O‘zgarishlar yangi tahlillarga qo‘llanadi; rollar kuchga kirishi uchun mavjud hujjatlarni qayta tahlil qiling.',
@@ -850,7 +848,7 @@ export default {
       tag: '<p>‘Teg’ bo‘laklash usulidan foydalanadigan ma’lumotlar to‘plami teg to‘plami sifatida ishlaydi. Boshqa to‘plamlar uni o‘z bo‘laklariga teg qo‘yish uchun ishlatadi, ushbu to‘plamlarga yuborilgan so‘rovlar ham shu teg to‘plami yordamida teglanadi.</p>\n<p>Teg to‘plami Retrieval-Augmented Generation (RAG) jarayonida <b>BEVOSITA</b> ishtirok etmaydi.</p>\n<p>Ushbu to‘plamdagi har bir bo‘lak mustaqil tavsif-teg juftligidir.</p>\n<p>Qo‘llab-quvvatlanadigan formatlar <b>XLSX</b> va <b>CSV/TXT</b>:</p>\n<p>Agar fayl <b>XLSX</b> formatida bo‘lsa, u sarlavhasiz ikkita ustunni o‘z ichiga olishi kerak: bittasi teg tavsiflari, ikkinchisi teg nomlari uchun, Tavsif ustuni Teg ustunidan oldin turadi. Bir nechta varaq ham mumkin, agar ustunlar to‘g‘ri tuzilgan bo‘lsa.</p>\n<p>Agar fayl <b>CSV/TXT</b> formatida bo‘lsa, u UTF-8 kodlashda bo‘lishi va tavsiflar hamda teglarni ajratish uchun TAB ajratgichidan foydalanishi shart.</p>\n<p>Teg ustunida teglarni ajratish uchun <b>vergul</b> ishlatiladi.</p>\n<i>Yuqoridagi qoidalarga mos kelmaydigan matn qatorlari e’tiborga olinmaydi.</i>\n',
       useRaptor: 'RAPTOR',
       useRaptorTip:
-        'RAPTOR ko‘p bosqichli savol-javob vazifalari uchun ishlatilishi mumkin. Uni yoqish uchun Fayllar sahifasiga o‘ting va Generatsiya > RAPTOR bosing. Tafsilotlar uchun https://ragflow.io/docs/knowledge_compilation/built_in_templates_and_dedicated_configuration#tree ga qarang.',
+        'RAPTOR ko‘p bosqichli savol-javob vazifalari uchun ishlatilishi mumkin. Uni yoqish uchun Fayllar sahifasiga o‘ting va Generatsiya > RAPTOR bosing.',
       prompt: 'Prompt',
       promptTip:
         'Tizim prompti bilan LLM uchun vazifani tasvirlang, u qanday javob berishini belgilang va boshqa turli talablarni bayon qiling. Tizim prompti ko‘pincha LLM uchun turli xil ma’lumot kirishlari bo‘lgan kalitlar (o‘zgaruvchilar) bilan birga ishlatiladi. Kalitlarni ko‘rsatish uchun teskari qiyosiq `/` yoki (x) tugmasidan foydalaning.',
@@ -885,7 +883,7 @@ export default {
       vietnamese: 'Vyetnam tili',
       pageRank: 'Page rank',
       pageRankTip:
-        'Qidiruv paytida aniq ma’lumotlar to‘plamlariga yuqoriroq PageRank balli belgilashingiz mumkin. Mos ball ushbu to‘plamlardan olingan bo‘laklarning gibrid o‘xshashlik ballariga qo‘shilib, ularning reytingini oshiradi. Tafsilotlar uchun https://ragflow.io/docs/dataset_configuration#basic-information ga qarang.',
+        'Qidiruv paytida aniq ma’lumotlar to‘plamlariga yuqoriroq PageRank balli belgilashingiz mumkin. Mos ball ushbu to‘plamlardan olingan bo‘laklarning gibrid o‘xshashlik ballariga qo‘shilib, ularning reytingini oshiradi.',
       tagName: 'Teg',
       tagMessage: 'Iltimos, tegni tanlang',
       frequency: 'Chastota',
@@ -896,13 +894,13 @@ export default {
       tagTable: 'Jadval',
       tagSet: 'Teg to‘plamlari',
       tagSetTip:
-        '\n     <p> To‘plamingizdagi bo‘laklarni avtomatik teglash uchun bir yoki bir nechta teg to‘plamini tanlang. Tafsilotlar uchun https://ragflow.io/docs/dataset_configuration#basic-information ga qarang.</p>\n<p>Foydalanuvchi so‘rovi ham avtomatik teglanadi.</p>\nBu avtomatik teglash funksiyasi mavjud to‘plamga sohaga xos bilimlarning qo‘shimcha qatlamini qo‘shib, qidiruvni yaxshilaydi.\n<p>Avtomatik teg va avtomatik kalit so‘z o‘rtasidagi farq:</p>\n<ul>\n  <li>Teg to‘plami foydalanuvchi tomonidan belgilangan yopiq to‘plamdir, LLM ajratib olgan kalit so‘zlar esa ochiq to‘plam sifatida qaraladi.</li>\n  <li>Avtomatik teg funksiyasini ishga tushirishdan oldin teg to‘plamlarini belgilangan formatlarda yuklashingiz kerak.</li>\n  <li>Avtomatik kalit so‘z funksiyasi LLMga bog‘liq va sezilarli miqdorda token sarflaydi.</li>\n</ul>\n      ',
+        '\n     <p> To‘plamingizdagi bo‘laklarni avtomatik teglash uchun bir yoki bir nechta teg to‘plamini tanlang.</p>\n<p>Foydalanuvchi so‘rovi ham avtomatik teglanadi.</p>\nBu avtomatik teglash funksiyasi mavjud to‘plamga sohaga xos bilimlarning qo‘shimcha qatlamini qo‘shib, qidiruvni yaxshilaydi.\n<p>Avtomatik teg va avtomatik kalit so‘z o‘rtasidagi farq:</p>\n<ul>\n  <li>Teg to‘plami foydalanuvchi tomonidan belgilangan yopiq to‘plamdir, LLM ajratib olgan kalit so‘zlar esa ochiq to‘plam sifatida qaraladi.</li>\n  <li>Avtomatik teg funksiyasini ishga tushirishdan oldin teg to‘plamlarini belgilangan formatlarda yuklashingiz kerak.</li>\n  <li>Avtomatik kalit so‘z funksiyasi LLMga bog‘liq va sezilarli miqdorda token sarflaydi.</li>\n</ul>\n      ',
       topnTags: 'Top-N teglar',
       tags: 'Teglar',
       addTag: 'Teg qo‘shish',
       useGraphRag: 'Bilimlar grafi',
       useGraphRagTip:
-        'Ichki mantiqli ko‘p bosqichli savol-javoblarni yaxshilash uchun joriy to‘plamning fayl bo‘laklari ustidan bilimlar grafini quradi. Tafsilotlar uchun https://ragflow.io/docs/knowledge_compilation/built_in_templates_and_dedicated_configuration#graph ga qarang.',
+        'Ichki mantiqli ko‘p bosqichli savol-javoblarni yaxshilash uchun joriy to‘plamning fayl bo‘laklari ustidan bilimlar grafini quradi.',
       graphRagMethod: 'Usul',
       graphRagMethodTip:
         '\n      Light: (Standart) Obyektlar va munosabatlarni ajratib olish uchun github.com/HKUDS/LightRAG taqdim etgan promptlardan foydalanadi. Bu variant kamroq token, kamroq xotira va kamroq hisoblash resursi sarflaydi.</br>\n      General: Obyektlar va munosabatlarni ajratib olish uchun github.com/microsoft/graphrag taqdim etgan promptlardan foydalanadi.</br>\n      NER: Obyektlar va munosabatlarni ajratib olish uchun spaCy NER va qoidaga asoslangan kalit so‘z ajratishdan foydalanadi. Ajratib olishning o‘zi uchun LLM talab qilinmaydi, bu uni tez va resurs-tejamkor qiladi.',
@@ -1033,7 +1031,7 @@ export default {
         'Rerank nomzodlari Top N dan katta yoki teng bo‘lishi kerak.',
       variable: 'O‘zgaruvchi',
       variableTip:
-        'RAGFlow chat yordamchisini boshqarish API’lari bilan birga ishlatilganda, o‘zgaruvchilar yanada moslashuvchan tizim prompt strategiyalarini ishlab chiqishga yordam beradi. Belgilangan o‘zgaruvchilar ‘Tizim prompti’ tomonidan LLM promptlarining bir qismi sifatida ishlatiladi. {knowledge} — belgilangan to‘plamlardan olingan bo‘laklarni anglatuvchi maxsus zaxira o‘zgaruvchisi, va barcha o‘zgaruvchilar ‘Tizim prompti’da jingalak qavslar {} ichida yozilishi kerak. Tafsilotlar uchun https://ragflow.io/docs/chat_configuration#system-prompt ga qarang.',
+        'Platforma chat yordamchisini boshqarish API’lari bilan birga ishlatilganda, o‘zgaruvchilar yanada moslashuvchan tizim prompt strategiyalarini ishlab chiqishga yordam beradi. Belgilangan o‘zgaruvchilar ‘Tizim prompti’ tomonidan LLM promptlarining bir qismi sifatida ishlatiladi. {knowledge} — belgilangan to‘plamlardan olingan bo‘laklarni anglatuvchi maxsus zaxira o‘zgaruvchisi, va barcha o‘zgaruvchilar ‘Tizim prompti’da jingalak qavslar {} ichida yozilishi kerak.',
       add: 'Qo‘shish',
       key: 'Kalit',
       variableKeyMessage: 'Iltimos, o‘zgaruvchi kalitini kiriting',
@@ -1128,7 +1126,7 @@ export default {
       extensionTitle: 'Chrome kengaytmasi',
       tokenError: 'Iltimos, avval API Key yarating.',
       betaError:
-        'Iltimos, avval Tizim sozlamalari sahifasidan RAGFlow API Key oling.',
+        'Iltimos, avval Tizim sozlamalari sahifasidan platforma API kalitini oling.',
       searching: 'Qidirilmoqda...',
       parsing: 'Tahlil qilinmoqda',
       uploading: 'Yuklanmoqda',
@@ -1143,7 +1141,6 @@ export default {
       multiTurn: 'Ko‘p bosqichli optimallashtirish',
       multiTurnTip:
         'Bu ko‘p raundli suhbatda kontekstdan foydalanib foydalanuvchi so‘rovlarini optimallashtiradi. Yoqilganda qo‘shimcha LLM tokenlari sarflanadi.',
-      howUseId: 'Chat ID’dan qanday foydalanish?',
       description: 'Yordamchi tavsifi',
       descriptionPlaceholder: 'Men chat yordamchisiman.',
       useKnowledgeGraph: 'Bilimlar grafidan foydalanish',
@@ -1559,7 +1556,7 @@ export default {
       webdavRemotePathTip:
         'Ixtiyoriy: WebDAV serveridagi papka yo‘lini kiriting (masalan, /Documents). Root’dan sinxronlash uchun bo‘sh qoldiring.',
       webdavCaCertPathTip:
-        'Ixtiyoriy: RAGFlow konteyneri ichiga ulangan CA sertifikat to‘plami yo‘li.',
+        'Ixtiyoriy: platforma konteyneri ichiga ulangan CA sertifikat to‘plami yo‘li.',
       google_driveTokenTip:
         'OAuth yordamchisi yoki Google Cloud Console’dan olingan OAuth token JSON’ini yuklang. "installed" yoki "web" ilovasidan olingan client_secret JSON’ni ham yuklashingiz mumkin. Agar bu birinchi sinxronizatsiyangiz bo‘lsa, OAuth roziligini yakunlash uchun brauzer oynasi ochiladi. Agar JSON’da allaqachon refresh token mavjud bo‘lsa, u avtomatik qayta ishlatiladi.',
       google_drivePrimaryAdminTip:
@@ -1641,9 +1638,9 @@ export default {
       sitemapRestrictPdfToDomainTip:
         'Faqat sitemap bilan bir xil domenda joylashgan PDF havolalari kuzatiladi.',
       sitemapUserAgentTip:
-        'Har bir so‘rov bilan yuboriladigan User-Agent sarlavhasi. RAGFlow-SitemapConnector/1.0 ishlatish uchun bo‘sh qoldiring.',
+        'Har bir so‘rov bilan yuboriladigan User-Agent sarlavhasi. standart User-Agent sarlavhasini ishlatish uchun bo‘sh qoldiring.',
       sitemapBatchSizeTip:
-        'Har bir partiyada olinib RAGFlow’ga yuboriladigan sahifalar soni.',
+        'Har bir partiyada olinib platformaga yuboriladigan sahifalar soni.',
       azure_devopsDescription:
         'Repository fayllari va pull requestlarni sinxronlash uchun Azure DevOps’ni ulang.',
       bitbucketDescription:
@@ -2553,7 +2550,7 @@ export default {
       directory: 'Direktoriya',
       uploadTitle: 'Yuklash uchun faylingizni bu yerga sudrab tashlang',
       uploadDescription:
-        'Bitta yoki ommaviy fayl yuklash qo‘llab-quvvatlanadi. Lokal joylashtirilgan RAGFlow uchun: har bir yuklashda umumiy fayl hajmi chegarasi 1GB, ommaviy yuklash chegarasi 32 fayl. Hisob uchun fayllar umumiy sonining chegarasi yo‘q. cloud.ragflow.io uchun: har bir yuklashda umumiy fayl hajmi chegarasi 10MB, har bir fayl 10MB dan oshmasligi va hisob uchun maksimum 128 fayl.',
+        'Bitta yoki ommaviy fayl yuklash qo‘llab-quvvatlanadi. Lokal joylashtirilgan platforma uchun: har bir yuklashda umumiy fayl hajmi chegarasi 1GB, ommaviy yuklash chegarasi 32 fayl. Hisob uchun fayllar umumiy sonining chegarasi yo‘q. bulut xizmati uchun: har bir yuklashda umumiy fayl hajmi chegarasi 10MB, har bir fayl 10MB dan oshmasligi va hisob uchun maksimum 128 fayl.',
       local: 'Lokal yuklashlar',
       s3: 'S3 yuklashlar',
       preview: 'Ko‘rish',
@@ -3200,7 +3197,6 @@ export default {
       input: 'Kirish',
       output: 'Chiqish',
       parameter: 'Parametr',
-      howUseId: 'Agent ID’dan qanday foydalanish?',
       content: 'Kontent',
       operationResults: 'Operatsiya natijalari',
       autosaved: 'Avtomatik saqlandi',
@@ -3817,7 +3813,6 @@ export default {
     },
     admin: {
       loginTitle: 'Admin konsoli',
-      title: 'RAGFlow',
       confirm: 'Tasdiqlash',
       close: 'Yopish',
       yes: 'Ha',

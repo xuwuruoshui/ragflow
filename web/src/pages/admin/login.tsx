@@ -23,6 +23,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { platformLogo } from '@/conf.json';
 import { Authorization } from '@/constants/authorization';
 
 import { useAuth } from '@/hooks/auth-hooks';
@@ -135,9 +136,15 @@ function AdminLogin() {
         <BgSvg isPaused={true} />
 
         <div className="absolute top-3 left-0 w-full">
-          <div className="absolute mt-12 ml-12 flex items-center">
-            <img className="size-8 mr-5" src="/logo.svg" alt="logo" />
-            <span className="text-xl font-bold">RAGFlow</span>
+          <div className="absolute mt-12 inset-x-4 flex items-center gap-3 sm:inset-x-12">
+            <img
+              className="h-14 w-auto shrink-0"
+              src={platformLogo}
+              alt="TALENT CPA"
+            />
+            <span className="text-xl font-bold">
+              {t('platformName', { keyPrefix: 'common' })}
+            </span>
           </div>
 
           <h1 className="mt-[6.5rem] text-4xl font-medium text-center mb-12">

@@ -39,7 +39,6 @@ import {
   ChevronRight,
   CircleCheck,
   CircleAlert,
-  ExternalLink,
   Loader2,
   Minus,
   RefreshCw,
@@ -75,8 +74,6 @@ import {
   ProviderInstanceCardRef,
 } from './interface';
 
-const GUIDE_URL =
-  'https://docs.gpustack.ai/latest/integrations/integrate-with-ragflow/';
 const URL_PLACEHOLDER = 'http://host.docker.internal:80';
 
 type TranslateFn = (key: string, options?: Record<string, unknown>) => string;
@@ -114,15 +111,6 @@ function EmptyModels({ t }: { t: TranslateFn }) {
       <div className="text-sm text-text-secondary max-w-prose">
         {t('gpustack.emptyBody')}
       </div>
-      <a
-        href={GUIDE_URL}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex items-center gap-1 text-sm text-accent-primary"
-      >
-        {t('gpustack.emptyLink')}
-        <ExternalLink className="size-3.5" />
-      </a>
     </div>
   );
 }

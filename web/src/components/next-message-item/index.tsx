@@ -45,6 +45,7 @@ import { DocumentDownloadButton } from '../document-download-button';
 import { LoadingDots } from '../loading-dots';
 import MarkdownContent from '../next-markdown-content';
 import { RAGFlowAvatar } from '../ragflow-avatar';
+import { platformIcon } from '@/conf.json';
 import SvgIcon from '../svg-icon';
 import { useTheme } from '../theme-provider';
 import { Button } from '../ui/button';
@@ -201,7 +202,7 @@ function MessageItem({
           {visibleAvatar &&
             (item.role === MessageType.User ? (
               <RAGFlowAvatar
-                avatar={avatar ?? '/logo.svg'}
+                avatar={avatar ?? platformIcon}
                 name={nickname}
                 isPerson
               />

@@ -79,13 +79,19 @@ const globalFilterFn = createFuzzySearchFn<AdminService.ListServicesItem>([
   'service_type',
 ]);
 
-const SERVICE_TYPE_FILTER_OPTIONS = [
-  { value: 'ragflow_server', label: 'ragflow_server' },
-  { value: 'meta_data', label: 'meta_data' },
-  { value: 'file_store', label: 'file_store' },
-  { value: 'retrieval', label: 'retrieval' },
-  { value: 'message_queue', label: 'message_queue' },
+const ApiServiceType = 'ragflow_server';
+const ServiceTypeFilterOptions = [
+  ApiServiceType,
+  'meta_data',
+  'file_store',
+  'retrieval',
+  'message_queue',
 ];
+
+/** 服务类型的接口值用于查询和筛选，页面展示本地化名称。 */
+function getServiceTypeLabel(value: string, apiLabel: string) {
+  return value === ApiServiceType ? apiLabel : value;
+}
 
 const AdminServiceKeys = {
   list: () => ['admin/listServices'] as const,
@@ -95,6 +101,7 @@ const AdminServiceKeys = {
 
 function AdminServiceStatus() {
   const { t } = useTranslation();
+  const apiLabel = t('chat.backendServiceApi');
   const [extraInfoModalOpen, setExtraInfoModalOpen] = useState(false);
   const [detailModalOpen, setDetailModalOpen] = useState(false);
   const [itemToMakeAction, setItemToMakeAction] =
@@ -120,6 +127,7 @@ function AdminServiceStatus() {
       }),
       columnHelper.accessor('service_type', {
         header: t('admin.serviceType'),
+        cell: ({ getValue }) => getServiceTypeLabel(getValue(), apiLabel),
         filterFn: createColumnFilterFn(
           (row, id, filterValue) => row.getValue(id) === filterValue,
           {
@@ -196,14 +204,18 @@ function AdminServiceStatus() {
         ),
       }),
     ],
-    [t],
+    [apiLabel, t],
   );
 
   const table = useReactTable({
     data: servicesList ?? EMPTY_DATA,
     columns: columnDefs,
 
-    globalFilterFn,
+    // 1. 同时支持按接口服务类型和页面上展示的名称检索。
+    globalFilterFn: (row, columnId, filterValue: string) =>
+      globalFilterFn(row, columnId, filterValue) ||
+      (row.original.service_type === ApiServiceType &&
+        apiLabel.toLowerCase().includes(filterValue.trim().toLowerCase())),
 
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -261,7 +273,7 @@ function AdminServiceStatus() {
                           <span>{t('admin.all')}</span>
                         </Label>
 
-                        {SERVICE_TYPE_FILTER_OPTIONS.map(({ label, value }) => (
+                        {ServiceTypeFilterOptions.map((value) => (
                           <Label
                             key={value}
                             className="flex items-center space-x-2"
@@ -270,7 +282,7 @@ function AdminServiceStatus() {
                               className="bg-bg-input border-border-button"
                               value={value}
                             />
-                            <span>{label}</span>
+                            <span>{getServiceTypeLabel(value, apiLabel)}</span>
                           </Label>
                         ))}
                       </RadioGroup>

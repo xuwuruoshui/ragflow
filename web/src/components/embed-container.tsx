@@ -14,9 +14,11 @@
  *  limitations under the License.
  */
 
+import { platformIcon } from '@/conf.json';
 import { useFetchAppConf } from '@/hooks/logic-hooks';
 import { RefreshCcw } from 'lucide-react';
 import { PropsWithChildren } from 'react';
+import { useTranslation } from 'react-i18next';
 import { RAGFlowAvatar } from './ragflow-avatar';
 import { Button } from './ui/button';
 
@@ -34,7 +36,14 @@ export function EmbedContainer({
   handleReset,
   hideReset = false,
 }: EmbedContainerProps) {
+  const { t } = useTranslation();
   const appConf = useFetchAppConf();
+  // 部署时自定义的分享页名称优先，默认名称随界面语言切换。
+  const platformName =
+    appConf.appName &&
+    appConf.appName !== t('common.platformName', { lng: 'en' })
+      ? appConf.appName
+      : t('common.platformName');
 
   return (
     <section className="h-[100vh] flex justify-center items-center">
@@ -55,9 +64,9 @@ export function EmbedContainer({
             </div>
           </div>
           <div className="flex items-center gap-2 md:ml-auto md:mr-3 shrink-0">
-            <img src="/logo.svg" alt="" className="h-6 md:h-8" />
-            <span className="hidden md:inline-block text-lg font-bold text-foreground">
-              {appConf.appName}
+            <img src={platformIcon} alt="" className="size-6 md:size-8" />
+            <span className="sr-only md:not-sr-only md:inline-block text-lg font-bold text-foreground">
+              {platformName}
             </span>
           </div>
           {hideReset || (

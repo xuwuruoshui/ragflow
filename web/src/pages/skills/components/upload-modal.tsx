@@ -661,8 +661,8 @@ const UploadModal: React.FC<UploadModalProps> = ({
         t('skills.validation.valid') || 'Valid skill format',
       );
 
-      // 4. Upload to RAGFlow
-      setGitProgress('Uploading to RAGFlow...');
+      // 4. 将通过校验的技能文件上传到平台。
+      setGitProgress('Uploading skill...');
       const skillName =
         validation.name || repo.toLowerCase().replace(/[^a-z0-9_-]/g, '-');
 

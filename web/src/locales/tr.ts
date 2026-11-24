@@ -1,6 +1,7 @@
 export default {
   translation: {
     common: {
+      platformName: 'Bilgi tabanı platformu',
       confirm: 'Onayla',
       back: 'Geri',
       noResults: 'Sonuç bulunamadı',
@@ -115,7 +116,7 @@ export default {
       nicknamePlaceholder: 'Lütfen takma ad girin',
       register: 'Hesap oluştur',
       continue: 'Devam et',
-      title: 'LLM bağlamı için öncü RAG motoru',
+      title: 'Bilgilerinizi arayın ve yönetin',
       start: 'Hadi başlayalım',
       description:
         'En iyi RAG teknolojisini keşfetmek için ücretsiz kaydolun. İşinizi güçlendirmek için datasets ve yapay zekalar oluşturun.',
@@ -137,9 +138,6 @@ export default {
       welcome: 'Hoş geldiniz',
       dataset: 'Dataset',
       memories: 'Bellek',
-      discord: 'Discord',
-      github: 'GitHub',
-      help: 'Yardım',
     },
     skills: {
       title: 'Beceriler',
@@ -550,7 +548,7 @@ Prosedürel Bellek: Öğrenilen beceriler, alışkanlıklar ve otomatik prosedü
       testSetting: 'Ayar',
       retrievalTesting: 'Alım testi',
       retrievalTestingDescription:
-        "RAGFlow'nun LLM için hedeflenen içeriği alıp alamadığını kontrol etmek için bir alım testi yapın.",
+        'platformun LLM için hedeflenen içeriği alıp alamadığını kontrol etmek için bir alım testi yapın.',
       Parse: 'Ayrıştır',
       dataset: 'Dataset',
       testing: 'Alım testi',
@@ -577,7 +575,7 @@ Prosedürel Bellek: Öğrenilen beceriler, alışkanlıklar ve otomatik prosedü
       action: 'İşlem',
       parsingStatus: 'Ayrıştırma durumu',
       parsingStatusTip:
-        "Belge ayrıştırma süresi çeşitli faktörlere bağlıdır. Bilgi Grafiği, RAPTOR, Otomatik Soru Çıkarma veya Otomatik Anahtar Kelime Çıkarma gibi özelliklerin etkinleştirilmesi işlem süresini önemli ölçüde artıracaktır. İlerleme çubuğu durursa, lütfen şu SSS'ye başvurun: https://ragflow.io/docs/dev/faq#why-does-my-document-parsing-stall-at-under-one-percent.",
+        'Belge ayrıştırma süresi çeşitli faktörlere bağlıdır. Bilgi Grafiği, RAPTOR, Otomatik Soru Çıkarma veya Otomatik Anahtar Kelime Çıkarma gibi özelliklerin etkinleştirilmesi işlem süresini önemli ölçüde artıracaktır.',
       processBeginAt: 'Başlangıç zamanı',
       processDuration: 'Süre',
       progressMsg: 'İlerleme',
@@ -586,10 +584,10 @@ Prosedürel Bellek: Öğrenilen beceriler, alışkanlıklar ve otomatik prosedü
       noTestResultsForNotRuned:
         'Henüz test çalıştırılmadı. Sonuçlar burada görünecek.',
       testingDescription:
-        "RAGFlow'nun LLM için hedeflenen içeriği alıp alamadığını kontrol etmek için bir alım testi yapın.",
+        'platformun LLM için hedeflenen içeriği alıp alamadığını kontrol etmek için bir alım testi yapın.',
       similarityThreshold: 'Benzerlik eşiği',
       similarityThresholdTip:
-        'RAGFlow, getirme sırasında ağırlıklı anahtar kelime benzerliği ile ağırlıklı vektör kosinüs benzerliğinin bir kombinasyonunu veya bir yeniden sıralayıcı model seçildiğinde ağırlıklı anahtar kelime benzerliği ile ağırlıklı yeniden sıralama puanının bir kombinasyonunu kullanır. Bu parametre, kullanıcı sorgusu ile parçalar arasındaki benzerlik eşiğini belirler. Benzerlik puanı bu eşiğin altında olan parçalar sonuçlardan çıkarılır. Varsayılan eşik 20 olarak ayarlanmıştır. Bu, yalnızca hibrit benzerlik puanı 20 veya daha yüksek olan parçaların getirileceği anlamına gelir. Vektör benzerliği ağırlığı 0 olarak ayarlanırsa bu eşik uygulanmaz.',
+        'Platform, getirme sırasında ağırlıklı anahtar kelime benzerliği ile ağırlıklı vektör kosinüs benzerliğinin bir kombinasyonunu veya bir yeniden sıralayıcı model seçildiğinde ağırlıklı anahtar kelime benzerliği ile ağırlıklı yeniden sıralama puanının bir kombinasyonunu kullanır. Bu parametre, kullanıcı sorgusu ile parçalar arasındaki benzerlik eşiğini belirler. Benzerlik puanı bu eşiğin altında olan parçalar sonuçlardan çıkarılır. Varsayılan eşik 20 olarak ayarlanmıştır. Bu, yalnızca hibrit benzerlik puanı 20 veya daha yüksek olan parçaların getirileceği anlamına gelir. Vektör benzerliği ağırlığı 0 olarak ayarlanırsa bu eşik uygulanmaz.',
       vectorSimilarityWeight: 'Vektör benzerlik ağırlığı',
       vectorSimilarityWeightTip:
         "Bu, vektör kosinüs benzerliği veya yeniden sıralama puanıyla kullanılan birleşik benzerlik puanındaki vektör benzerliğinin ağırlığını ayarlar. İki ağırlığın toplamı 1.0'a eşit olmalıdır.",
@@ -647,14 +645,14 @@ Prosedürel Bellek: Öğrenilen beceriler, alışkanlıklar ve otomatik prosedü
       changeSpecificCategory: 'Belirli kategoriyi değiştir',
       uploadTitle: 'Yüklemek için dosyanızı buraya sürükleyip bırakın',
       uploadDescription:
-        'Tekil veya toplu dosya yüklemeyi destekler. Yerel olarak dağıtılan RAGFlow için: yükleme başına toplam dosya boyutu sınırı 1GB, 32 dosyalık toplu yükleme sınırı vardır. Hesap başına toplam dosya sayısında sınır yoktur. cloud.ragflow.io için yükleme başına toplam dosya boyutu sınırı 10MB, her dosya en fazla 10MB ve hesap başına en fazla 128 dosya.',
+        'Tekil veya toplu dosya yüklemeyi destekler. Yerel olarak dağıtılan platform için: yükleme başına toplam dosya boyutu sınırı 1GB, 32 dosyalık toplu yükleme sınırı vardır. Hesap başına toplam dosya sayısında sınır yoktur. Barındırılan hizmet için yükleme başına toplam dosya boyutu sınırı 10MB, her dosya en fazla 10MB ve hesap başına en fazla 128 dosya.',
       chunk: 'Parça',
       bulk: 'Toplu',
       cancel: 'İptal',
       close: 'Kapat',
       rerankModel: 'Yeniden sıralama modeli',
       rerankPlaceholder: 'Değer seçin',
-      rerankTip: `İsteğe bağlı. Boş bırakılırsa RAGFlow ağırlıklı anahtar kelime benzerliği ve ağırlıklı vektör kosinüs benzerliğinin kombinasyonunu kullanır; yeniden sıralama modeli seçilirse ağırlıklı yeniden sıralama puanı ağırlıklı vektör kosinüs benzerliğinin yerini alır. Yeniden sıralama modeli kullanmanın sistemin yanıt süresini önemli ölçüde artıracağını unutmayın.`,
+      rerankTip: `İsteğe bağlı. Boş bırakılırsa platform ağırlıklı anahtar kelime benzerliği ve ağırlıklı vektör kosinüs benzerliğinin kombinasyonunu kullanır; yeniden sıralama modeli seçilirse ağırlıklı yeniden sıralama puanı ağırlıklı vektör kosinüs benzerliğinin yerini alır. Yeniden sıralama modeli kullanmanın sistemin yanıt süresini önemli ölçüde artıracağını unutmayın.`,
       topK: 'Top-K',
       topKTip: `Yeniden sıralama modeli ile birlikte kullanılır; bu ayar belirtilen yeniden sıralama modeline gönderilecek metin parçası sayısını tanımlar.`,
       delimiter: `Metin sınırlayıcısı`,
@@ -669,11 +667,11 @@ Prosedürel Bellek: Öğrenilen beceriler, alışkanlıklar ve otomatik prosedü
         'Sınırlayıcı yok — metin yalnızca boyuta göre parçalanacak.',
       delimiterPreviewCount: '({{count}})',
       html4excel: "Excel'i HTML'ye dönüştür",
-      html4excelTip: `Genel parçalama yöntemi ile kullanın. Devre dışı bırakıldığında, datasetteki elektronik tablolar (XLSX veya XLS(Excel 97-2003)) anahtar-değer çiftlerine ayrıştırılır. Etkinleştirildiğinde HTML tablolarına ayrıştırılır; orijinal tabloda 12'den fazla satır varsa her 12 satırda bölünür. Ayrıntılar için bkz. https://ragflow.io/docs/dataset_configuration#other-format-processing-configuration.`,
+      html4excelTip: `Genel parçalama yöntemi ile kullanın. Devre dışı bırakıldığında, datasetteki elektronik tablolar (XLSX veya XLS(Excel 97-2003)) anahtar-değer çiftlerine ayrıştırılır. Etkinleştirildiğinde HTML tablolarına ayrıştırılır; orijinal tabloda 12'den fazla satır varsa her 12 satırda bölünür.`,
       autoKeywords: 'Otomatik anahtar kelime',
-      autoKeywordsTip: `Her parça için otomatik olarak N anahtar kelime çıkarır ve o anahtar kelimeleri içeren sorgular için sıralamalarını artırır. 'Yapılandırma'da belirtilen indeksleme modeli tarafından ekstra tokenlar tüketileceğini unutmayın. Bir parçaya eklenen anahtar kelimeleri parça listesinden kontrol edebilir veya güncelleyebilirsiniz. Ayrıntılar için bkz. https://ragflow.io/docs/dataset_configuration#content-enhancement-configuration.`,
+      autoKeywordsTip: `Her parça için otomatik olarak N anahtar kelime çıkarır ve o anahtar kelimeleri içeren sorgular için sıralamalarını artırır. 'Yapılandırma'da belirtilen indeksleme modeli tarafından ekstra tokenlar tüketileceğini unutmayın. Bir parçaya eklenen anahtar kelimeleri parça listesinden kontrol edebilir veya güncelleyebilirsiniz.`,
       autoQuestions: 'Otomatik soru',
-      autoQuestionsTip: `Her parça için otomatik olarak N soru çıkarır ve o soruları içeren sorgular için sıralamalarını artırır. Bir parçaya eklenen soruları parça listesinden kontrol edebilir veya güncelleyebilirsiniz. Bir hata oluşursa bu özellik parçalama işlemini bozmaz, ancak orijinal parçaya boş bir sonuç ekleyebilir. 'Yapılandırma'da belirtilen indeksleme modeli tarafından ekstra tokenlar tüketileceğini unutmayın. Ayrıntılar için bkz. https://ragflow.io/docs/dataset_configuration#content-enhancement-configuration.`,
+      autoQuestionsTip: `Her parça için otomatik olarak N soru çıkarır ve o soruları içeren sorgular için sıralamalarını artırır. Bir parçaya eklenen soruları parça listesinden kontrol edebilir veya güncelleyebilirsiniz. Bir hata oluşursa bu özellik parçalama işlemini bozmaz, ancak orijinal parçaya boş bir sonuç ekleyebilir. 'Yapılandırma'da belirtilen indeksleme modeli tarafından ekstra tokenlar tüketileceğini unutmayın.`,
       autoTags: 'Otomatik etiketler',
       redo: 'Mevcut {{chunkNum}} parçayı temizlemek istiyor musunuz?',
       setMetaData: 'Meta veri ayarla',
@@ -832,7 +830,7 @@ Prosedürel Bellek: Öğrenilen beceriler, alışkanlıklar ve otomatik prosedü
       tableColumnModeAuto: 'Otomatik',
       tableColumnModeManual: 'El ile',
       tableColumnModeAutoDescription:
-        'Tüm sütunlar parça metnine dahil edilir ve meta veri olarak saklanır (RAGFlow varsayılanı).',
+        'Tüm sütunlar parça metnine dahil edilir ve meta veri olarak saklanır (platform varsayılanı).',
       tableColumnRoles: 'Sütun rolleri',
       tableColumnRolesTip:
         'Hangi sütunların parça metnine (vektör ve tam metin araması için dizinlenir), yalnızca meta veriye (filtrelenebilir) veya her ikisine dahil edileceğini seçin. Değişiklikler yeni ayrıştırmalarda geçerli olur; rollerin etkili olması için mevcut belgeleri yeniden ayrıştırın.',
@@ -967,7 +965,7 @@ Prosedürel Bellek: Öğrenilen beceriler, alışkanlıklar ve otomatik prosedü
 `,
       useRaptor: 'RAPTOR',
       useRaptorTip:
-        "RAPTOR çok adımlı soru-cevap görevleri için kullanılabilir. Dosyalar sayfasına gidin, Oluştur > RAPTOR'a tıklayarak etkinleştirin. Ayrıntılar için bkz. https://ragflow.io/docs/knowledge_compilation/built_in_templates_and_dedicated_configuration#tree.",
+        "RAPTOR çok adımlı soru-cevap görevleri için kullanılabilir. Dosyalar sayfasına gidin, Oluştur > RAPTOR'a tıklayarak etkinleştirin.",
       prompt: 'İstem',
       promptTip:
         'Görevi tanımlamak, nasıl yanıt vermesi gerektiğini belirtmek ve diğer çeşitli gereksinimleri belirlemek için sistem istemini kullanın. Sistem istemi genellikle LLM için çeşitli veri girdileri olarak hizmet eden anahtarlarla (değişkenlerle) birlikte kullanılır. Kullanacağınız anahtarları göstermek için eğik çizgi `/` veya (x) düğmesini kullanın.',
@@ -1001,7 +999,7 @@ Yukarısı özetlemeniz gereken içeriktir.`,
       scopeFile: 'Dosya',
       vietnamese: 'Vietnamca',
       pageRank: 'Sayfa sıralaması',
-      pageRankTip: `Alım sırasında belirli datasets'e daha yüksek PageRank puanı atayabilirsiniz. İlgili puan, bu datasetlerden alınan parçaların hibrit benzerlik puanlarına eklenir ve sıralamalarını yükseltir. Ayrıntılar için bkz. https://ragflow.io/docs/dataset_configuration#basic-information.`,
+      pageRankTip: `Alım sırasında belirli datasets'e daha yüksek PageRank puanı atayabilirsiniz. İlgili puan, bu datasetlerden alınan parçaların hibrit benzerlik puanlarına eklenir ve sıralamalarını yükseltir.`,
       tagName: 'Etiket',
       tagMessage: 'Lütfen bir etiket seçin',
       frequency: 'Sıklık',
@@ -1012,7 +1010,7 @@ Yukarısı özetlemeniz gereken içeriktir.`,
       tagTable: 'Tablo',
       tagSet: 'Etiket kümeleri',
       tagSetTip: `
-     <p> Dataset'inizdeki parçaları otomatik olarak etiketlemek için bir veya birden fazla etiket dataset seçin. Ayrıntılar için bkz. https://ragflow.io/docs/dataset_configuration#basic-information.</p>
+     <p> Dataset'inizdeki parçaları otomatik olarak etiketlemek için bir veya birden fazla etiket dataset seçin.</p>
 <p>Kullanıcı sorgusu da otomatik olarak etiketlenecektir.</p>
 Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katmanı ekleyerek alımı geliştirir.
 <p>Otomatik etiket ve otomatik anahtar kelime arasındaki fark:</p>
@@ -1027,7 +1025,7 @@ Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katman�
       addTag: 'Etiket ekle',
       useGraphRag: 'Bilgi grafiği',
       useGraphRagTip:
-        'İç içe geçmiş mantık içeren çok adımlı soru-cevabı geliştirmek için mevcut dataset dosya parçaları üzerinde bir bilgi grafiği oluşturun. Ayrıntılar için bkz. https://ragflow.io/docs/knowledge_compilation/built_in_templates_and_dedicated_configuration#graph.',
+        'İç içe geçmiş mantık içeren çok adımlı soru-cevabı geliştirmek için mevcut dataset dosya parçaları üzerinde bir bilgi grafiği oluşturun.',
       graphRagMethod: 'Yöntem',
       graphRagMethodTip: `
       Hafif: (Varsayılan) Varlıkları ve ilişkileri çıkarmak için github.com/HKUDS/LightRAG tarafından sağlanan istemler kullanılır.</br>
@@ -1164,7 +1162,7 @@ Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katman�
         'Yeniden sıralama adayları, Top N değerinden büyük veya ona eşit olmalıdır.',
       variable: 'Değişken',
       variableTip:
-        "RAGFlow'nun sohbet asistanı yönetim API'leri ile birlikte kullanıldığında değişkenler, daha esnek sistem istemi stratejileri geliştirmeye yardımcı olur. Tanımlanan değişkenler, LLM'ye gönderilen istemlerin bir parçası olarak 'Sistem istemi' tarafından kullanılır. {knowledge}, belirtilen dataset'lerden getirilen parçaları temsil eden ayrılmış özel bir değişkendir ve tüm değişkenler 'Sistem istemi' içinde süslü parantez {} arasına alınmalıdır. Ayrıntılar için https://ragflow.io/docs/chat_configuration#system-prompt adresine bakın.",
+        "platformun sohbet asistanı yönetim API'leri ile birlikte kullanıldığında değişkenler, daha esnek sistem istemi stratejileri geliştirmeye yardımcı olur. Tanımlanan değişkenler, LLM'ye gönderilen istemlerin bir parçası olarak 'Sistem istemi' tarafından kullanılır. {knowledge}, belirtilen dataset'lerden getirilen parçaları temsil eden ayrılmış özel bir değişkendir ve tüm değişkenler 'Sistem istemi' içinde süslü parantez {} arasına alınmalıdır.",
       add: 'Ekle',
       key: 'Anahtar',
       variableKeyMessage: 'Lütfen değişken anahtarını girin',
@@ -1269,7 +1267,7 @@ Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katman�
       extensionTitle: 'Chrome uzantısı',
       tokenError: 'Lütfen önce API anahtarı oluşturun.',
       betaError:
-        'Lütfen önce Sistem Ayarları sayfasından bir RAGFlow API anahtarı edinin.',
+        'Lütfen önce Sistem Ayarları sayfasından bir platform API anahtarı edinin.',
       searching: 'Aranıyor...',
       parsing: 'Ayrıştırılıyor',
       uploading: 'Yükleniyor',
@@ -1284,7 +1282,6 @@ Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katman�
       multiTurn: 'Çok turlu optimizasyon',
       multiTurnTip:
         'Bu, çok turlu konuşmada bağlamı kullanarak kullanıcı sorgularını optimize eder. Etkinleştirildiğinde ek LLM tokenları tüketecektir.',
-      howUseId: 'Sohbet kimliği nasıl kullanılır?',
       description: 'Asistan açıklaması',
       descriptionPlaceholder: 'Ben bir sohbet asistanıyım.',
       useKnowledgeGraph: 'Bilgi grafiği kullan',
@@ -1378,9 +1375,9 @@ Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katman�
     setting: {
       gpustack: {
         serverUrl: "GPUStack sunucu URL'si",
-        serverUrlTip: 'RAGFlow konteynerinden erişilebilir olmalıdır.',
+        serverUrlTip: 'platform konteynerinden erişilebilir olmalıdır.',
         loopbackWarning:
-          'localhost, RAGFlow konteynerinin kendisini gösterir. Bunun yerine IP adresini veya host.docker.internal adresini kullanın.',
+          'localhost, platform konteynerinin kendisini gösterir. Bunun yerine IP adresini veya host.docker.internal adresini kullanın.',
         apiKey: 'API anahtarı',
         apiKeyTip:
           "GPUStack'te Erişim Kontrolü > API Anahtarları bölümünden bir anahtar oluşturun.",
@@ -1392,12 +1389,11 @@ Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katman�
         errorAuth:
           'GPUStack bu API anahtarını reddetti. Erişim Kontrolü > API Anahtarları bölümünden kontrol edin.',
         errorUnreachable:
-          "Bu sunucuya RAGFlow'dan erişilemiyor. URL'yi ve portun RAGFlow konteynerine açık olduğunu kontrol edin.",
+          "Bu sunucuya platformdan erişilemiyor. URL'yi ve portun platform konteynerine açık olduğunu kontrol edin.",
         errorOther: 'Modeller listelenemedi: {{message}}',
         emptyTitle: 'Çalışan model bulunamadı',
         emptyBody:
           'GPUStack yalnızca çalışan ve yönlendirmesi olan modelleri sunar. "Model Yönlendirmesini Etkinleştir" açık olarak bir model dağıtın, ardından yenileyin.',
-        emptyLink: 'Entegrasyon kılavuzunu okuyun',
         addModels: '{{count}} model ekle',
         addSelected: 'Seçilen {{count}} modeli ekle',
         adding: 'Ekleniyor...',
@@ -1752,7 +1748,7 @@ Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katman�
       webdavRemotePathTip:
         'İsteğe bağlı: WebDAV sunucusunda bir klasör yolu belirtin.',
       webdavCaCertPathTip:
-        'İsteğe bağlı: RAGFlow konteynerinin içine bağlanmış bir CA sertifika paketinin yolu.',
+        'İsteğe bağlı: platform konteynerinin içine bağlanmış bir CA sertifika paketinin yolu.',
       google_driveTokenTip:
         'OAuth yardımcısından veya Google Cloud Console\'dan oluşturulan OAuth token JSON\'unu yükleyin. "installed" veya "web" uygulamasından bir client_secret JSON da yükleyebilirsiniz. Bu ilk senkronizasyonunuzsa, OAuth onayını tamamlamak için bir tarayıcı penceresi açılacaktır. JSON zaten bir yenileme token\'ı içeriyorsa otomatik olarak yeniden kullanılacaktır.',
       google_drivePrimaryAdminTip:
@@ -1835,9 +1831,9 @@ Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katman�
       sitemapRestrictPdfToDomainTip:
         'Yalnızca site haritasıyla aynı alan adında barındırılan PDF bağlantılarını izleyin.',
       sitemapUserAgentTip:
-        'Her istekle gönderilen User-Agent başlığı. RAGFlow-SitemapConnector/1.0 kullanmak için boş bırakın.',
+        'Her istekle gönderilen User-Agent başlığı. varsayılan User-Agent başlığını kullanmak için boş bırakın.',
       sitemapBatchSizeTip:
-        "Toplu işlem başına alınan ve RAGFlow'a gönderilen sayfa sayısı.",
+        'Toplu işlem başına alınan ve platforma gönderilen sayfa sayısı.',
       azure_devopsDescription:
         "Depo dosyalarını ve pull request'leri senkronize etmek için Azure DevOps'u bağlayın.",
       bitbucketDescription:
@@ -2232,7 +2228,7 @@ Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katman�
       mineruApiToken: "MinerU API token'ı",
       mineruApiTokenPlaceholder: 'mineru.net API yönetiminden alınan token',
       mineruApiTokenTip:
-        "Ayarlandığında RAGFlow resmi hassas API'yi (/api/v4, vlm dahil) kullanır. Oturum açma gerektirmeyen ajan API'sini kullanmak için boş bırakın. Kendi barındırdığınız MinerU sunucusu için gerekli değildir.",
+        "Ayarlandığında platform resmi hassas API'yi (/api/v4, vlm dahil) kullanır. Oturum açma gerektirmeyen ajan API'sini kullanmak için boş bırakın. Kendi barındırdığınız MinerU sunucusu için gerekli değildir.",
       mineruOutputDir: 'MinerU Çıktı Dizini',
       mineruOutputDirMessage: 'Lütfen MinerU çıktı dizinini girin!',
       mineruOutputDirPlaceholder: '/tmp/mineru',
@@ -2733,7 +2729,7 @@ Bu otomatik etiketleme özelliği, mevcut datasete alanına özgü bilgi katman�
       directory: 'Dizin',
       uploadTitle: 'Yüklemek için dosyanızı buraya sürükleyip bırakın',
       uploadDescription:
-        'Tekil veya toplu dosya yüklemeyi destekler. Yerel RAGFlow için 1GB sınır, 32 dosya toplu yükleme sınırı.',
+        'Tekil veya toplu dosya yüklemeyi destekler. Yerel platform için 1GB sınır, 32 dosya toplu yükleme sınırı.',
       local: 'Yerel yüklemeler',
       s3: 'S3 yüklemeleri',
       preview: 'Önizleme',
@@ -3412,7 +3408,6 @@ En uygun olduğu durumlar: Anlatı bütünlüğünün bitişik paragrafları bir
       input: 'Girdi',
       output: 'Çıktı',
       parameter: 'Parametre',
-      howUseId: 'Ajan kimliği nasıl kullanılır?',
       content: 'İçerik',
       operationResults: 'İşlem sonuçları',
       autosaved: 'Otomatik kaydedildi',
@@ -3483,7 +3478,7 @@ En uygun olduğu durumlar: Anlatı bütünlüğünün bitişik paragrafları bir
       userPrompt: 'Kullanıcı istemi',
       tagFile: 'Etiket dosyası',
       tagFileTip:
-        'Alım doğruluğunu artırmak için her parçadan en fazla N ilgili etiketi otomatik olarak çıkarır. Metin ve etiketler için iki sütun içeren XLSX, XLS, CSV ve TXT dosyalarını destekler. Birden fazla etiketi virgülle ayırın. Başlık satırı gerekmez. Etiket çıkarma ek token tüketebilir. Çıkarma başarısız olursa orijinal parça korunur. Ayrıntılar için bkz. https://ragflow.io/docs/dataset_configuration#content-enhancement-configuration.',
+        'Alım doğruluğunu artırmak için her parçadan en fazla N ilgili etiketi otomatik olarak çıkarır. Metin ve etiketler için iki sütun içeren XLSX, XLS, CSV ve TXT dosyalarını destekler. Birden fazla etiketi virgülle ayırın. Başlık satırı gerekmez. Etiket çıkarma ek token tüketebilir. Çıkarma başarısız olursa orijinal parça korunur.',
       tocDataSource: 'Veri kaynağı',
       addCategory: 'Kategori ekle',
       categoryName: 'Kategori adı',
@@ -4141,7 +4136,6 @@ Temel Talimatlar:
     },
     admin: {
       loginTitle: 'Yönetici konsolu',
-      title: 'RAGFlow',
       confirm: 'Onayla',
       close: 'Kapat',
       yes: 'Evet',

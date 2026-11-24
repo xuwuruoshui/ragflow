@@ -44,13 +44,7 @@ export const LocalLlmConfigs: Record<string, ProviderConfig> = {
     ],
     'https://docs.aimlapi.com/quickstart/simple-model',
   ),
-  [LLMFactory.Ollama]: buildLocalConfig(
-    LLMFactory.Ollama,
-    'Ollama',
-    false,
-    undefined,
-    'https://github.com/infiniflow/ragflow/blob/main/docs/guides/models/deploy_local_llm.mdx',
-  ),
+  [LLMFactory.Ollama]: buildLocalConfig(LLMFactory.Ollama, 'Ollama'),
   [LLMFactory.Xinference]: buildLocalConfig(
     LLMFactory.Xinference,
     'Xinference',
@@ -132,13 +126,7 @@ export const LocalLlmConfigs: Record<string, ProviderConfig> = {
     ],
     'https://mws.ru/docs/cloud-platform/gpt/general/inference-text.html',
   ),
-  [LLMFactory.RAGcon]: buildLocalConfig(
-    LLMFactory.RAGcon,
-    'RAGcon',
-    false,
-    undefined,
-    'https://www.ragcon.ai/erste-schritte-mit-ragflow/',
-  ),
+  [LLMFactory.RAGcon]: buildLocalConfig(LLMFactory.RAGcon, 'RAGcon'),
   [LLMFactory.TogetherAI]: buildLocalConfig(
     LLMFactory.TogetherAI,
     'TogetherAI',
@@ -176,13 +164,7 @@ export const LocalLlmConfigs: Record<string, ProviderConfig> = {
     undefined,
     'https://huggingface.co/docs/text-embeddings-inference/quick_tour',
   ),
-  [LLMFactory.GPUStack]: buildLocalConfig(
-    LLMFactory.GPUStack,
-    'GPUStack',
-    false,
-    undefined,
-    'https://docs.gpustack.ai/latest/integrations/integrate-with-ragflow/',
-  ),
+  [LLMFactory.GPUStack]: buildLocalConfig(LLMFactory.GPUStack, 'GPUStack'),
   [LLMFactory.VLLM]: buildLocalConfig(
     LLMFactory.VLLM,
     'VLLM',

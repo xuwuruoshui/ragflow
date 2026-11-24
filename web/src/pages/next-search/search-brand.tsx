@@ -16,11 +16,12 @@
 
 import { useFetchTokenListBeforeOtherStep } from '@/components/embed-dialog/use-show-embed-dialog';
 import { Button } from '@/components/ui/button';
+import { platformIcon } from '@/conf.json';
 import { SharedFrom } from '@/constants/chat';
-import { cn } from '@/lib/utils';
 import { Routes } from '@/routes';
 import { Send } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useFetchSearchDetail } from '../next-searches/hooks';
 import EmbedAppModal from './embed-app-modal';
 
@@ -56,22 +57,23 @@ function EmbedIcon() {
   );
 }
 
-export function RAGFlowLogo({
+/** 在搜索页显示平台品牌，并沿用独立的分享入口。 */
+export function SearchBrand({
   onClick,
   showEmbedIcon = true,
 }: {
   onClick?: React.MouseEventHandler<HTMLHeadingElement>;
   showEmbedIcon?: boolean;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="flex gap-4 items-center">
       <h1
         onClick={onClick}
-        className={cn(
-          'text-4xl font-bold bg-gradient-to-l from-[#40EBE3] to-[#4A51FF] bg-clip-text',
-        )}
+        className="flex min-w-0 items-center gap-3 text-2xl font-bold text-text-primary sm:text-4xl"
       >
-        RAGFlow
+        <img src={platformIcon} alt="" className="size-9 shrink-0 sm:size-10" />
+        {t('common.platformName')}
       </h1>
       {showEmbedIcon && <EmbedIcon></EmbedIcon>}
     </div>

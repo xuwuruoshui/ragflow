@@ -1,3 +1,5 @@
 {
-  "appName": "RAGFlow"
+  "appName": "Knowledge Base Platform",
+  "platformIcon": "/platform-icon.png",
+  "platformLogo": "/platform-logo.png"
 }

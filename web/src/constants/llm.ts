@@ -279,15 +279,12 @@ export const APIMapUrl = {
   [LLMFactory.EmpirioLabs]:
     'https://platform.empiriolabs.ai/dashboard/api-keys',
   [LLMFactory.AIStupidLevel]: 'https://aistupidlevel.info/router/keys',
-  [LLMFactory.Runcrate]:
-    'https://www.runcrate.ai/dashboard/api-keys?utm_source=ragflow&utm_medium=directory&utm_campaign=gpu_pricing',
-  [LLMFactory.WorldRouter]:
-    'https://worldrouter.ai/dashboard/api-keys?utm_source=ragflow&utm_medium=provider&utm_campaign=integration',
+  [LLMFactory.Runcrate]: 'https://www.runcrate.ai/dashboard/api-keys',
+  [LLMFactory.WorldRouter]: 'https://worldrouter.ai/dashboard/api-keys',
   [LLMFactory.CloudGPU]: 'https://cloudgpu.app/api/console',
   [LLMFactory.Obscurify]: 'https://obscurify.ai/account',
   [LLMFactory.HostingerRouter]: 'https://hpanel.hostinger.com/ai-router',
-  [LLMFactory.Cheapaimodel]:
-    'https://console.cheapaimodel.ai/keys?utm_source=ragflow',
+  [LLMFactory.Cheapaimodel]: 'https://console.cheapaimodel.ai/keys',
   [LLMFactory.Wally]: 'https://console.runanywhere.ai',
   [LLMFactory.Synap]: 'https://synap.linkrra.com/pricing',
   [LLMFactory.MWS]:

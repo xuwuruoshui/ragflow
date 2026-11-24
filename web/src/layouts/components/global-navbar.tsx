@@ -6,6 +6,7 @@ import { LucideHouse, LucideMenu } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { platformIcon } from '@/conf.json';
 import { cn } from '@/lib/utils';
 import { Routes } from '@/routes';
 import { supportsCssAnchor } from '@/utils/css-support';
@@ -237,11 +238,8 @@ function MobileNavItem({
   );
 }
 
-type MobileNavbarProps = {
-  renderFooter?: (close: () => void) => React.ReactNode;
-};
-
-export function MobileNavbar({ renderFooter }: MobileNavbarProps) {
+/** 窄屏菜单集中展示站内导航，用户选中菜单项后关闭抽屉。 */
+export function MobileNavbar() {
   const { t } = useTranslation();
   const activePath = useActivePath();
   const [open, setOpen] = useState(false);
@@ -267,7 +265,11 @@ export function MobileNavbar({ renderFooter }: MobileNavbarProps) {
         className="flex w-[min(85vw,18rem)] flex-col gap-0 p-0 sm:w-72"
       >
         <div className="flex shrink-0 justify-center py-5">
-          <img src="/logo.svg" alt="RAGFlow logo" className="size-9" />
+          <img
+            src={platformIcon}
+            alt={t('common.platformName')}
+            className="size-9"
+          />
         </div>
 
         <nav className="min-h-0 flex-1 overflow-y-auto py-3">
@@ -287,8 +289,6 @@ export function MobileNavbar({ renderFooter }: MobileNavbarProps) {
             ))}
           </ul>
         </nav>
-
-        {renderFooter?.(close)}
       </SheetContent>
     </Sheet>
   );

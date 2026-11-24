@@ -1,6 +1,7 @@
 export default {
   translation: {
     common: {
+      platformName: 'Plateforme de bases de connaissances',
       confirm: 'Confirmer',
       back: 'Retour',
       noResults: 'Aucun résultat trouvé',
@@ -102,7 +103,7 @@ export default {
       nicknamePlaceholder: 'Veuillez saisir votre pseudo',
       register: 'Créer un compte',
       continue: 'Continuer',
-      title: 'Commencez à créer vos IA.',
+      title: 'Recherchez et gérez vos connaissances',
       description:
         'Inscrivez-vous gratuitement pour explorer la technologie RAG. Créez des bases de connaissances et des IA pour booster votre activité.',
       review: 'sur plus de 500 avis',
@@ -390,15 +391,15 @@ export default {
       action: 'Action',
       parsingStatus: "Statut d'analyse",
       parsingStatusTip:
-        "Le temps d'analyse dépend de plusieurs facteurs. L'activation de fonctions comme le Graphe de connaissances, RAPTOR, l'extraction automatique de mots-clés ou de questions peut considérablement augmenter ce temps. Si la barre de progression reste bloquée, veuillez consulter ces deux FAQ : https://ragflow.io/docs/dev/faq#why-does-my-document-parsing-stall-at-under-one-percent.",
+        "Le temps d'analyse dépend de plusieurs facteurs. L'activation de fonctions comme le Graphe de connaissances, RAPTOR, l'extraction automatique de mots-clés ou de questions peut considérablement augmenter ce temps.",
       processBeginAt: 'Commencé à',
       processDuration: 'Durée',
       progressMsg: 'Progression',
       testingDescription:
-        'Effectuez un test de récupération pour vérifier si RAGFlow peut retrouver le contenu pertinent pour le LLM. Si vous avez modifié les paramètres par défaut, comme le poids de similarité ou le seuil de similarité, ces changements ne seront pas automatiquement sauvegardés. Vous devez les appliquer dans les paramètres de votre assistant de chat ou dans le composant agent de récupération.',
+        'Effectuez un test de récupération pour vérifier si la plateforme peut retrouver le contenu pertinent pour le LLM. Si vous avez modifié les paramètres par défaut, comme le poids de similarité ou le seuil de similarité, ces changements ne seront pas automatiquement sauvegardés. Vous devez les appliquer dans les paramètres de votre assistant de chat ou dans le composant agent de récupération.',
       similarityThreshold: 'Seuil de similarité',
       similarityThresholdTip:
-        'Lors de la récupération, RAGFlow utilise soit une combinaison de similarité pondérée par mots-clés et de similarité cosinus vectorielle pondérée, soit, lorsqu’un modèle de reranking est sélectionné, une combinaison de similarité pondérée par mots-clés et de score de reranking pondéré. Ce paramètre définit le seuil de similarité entre la requête de l’utilisateur et les segments. Tout segment dont le score de similarité est inférieur à ce seuil sera exclu des résultats. Par défaut, le seuil est défini sur 20. Cela signifie que seuls les segments dont le score de similarité hybride est supérieur ou égal à 20 seront récupérés. Si le poids de la similarité vectorielle est défini sur 0, ce seuil ne s’applique pas.',
+        'Lors de la récupération, la plateforme utilise soit une combinaison de similarité pondérée par mots-clés et de similarité cosinus vectorielle pondérée, soit, lorsqu’un modèle de reranking est sélectionné, une combinaison de similarité pondérée par mots-clés et de score de reranking pondéré. Ce paramètre définit le seuil de similarité entre la requête de l’utilisateur et les segments. Tout segment dont le score de similarité est inférieur à ce seuil sera exclu des résultats. Par défaut, le seuil est défini sur 20. Cela signifie que seuls les segments dont le score de similarité hybride est supérieur ou égal à 20 seront récupérés. Si le poids de la similarité vectorielle est défini sur 0, ce seuil ne s’applique pas.',
       vectorSimilarityWeight: 'Poids de similarité des mots-clés',
       vectorSimilarityWeightTip:
         "Définit le poids de la similarité vectorielle dans le score de similarité combiné, qu'elle soit utilisée avec la similarité cosinus vectorielle ou le score de réordonnancement. La somme des deux poids doit être égale à 1.0.",
@@ -441,13 +442,13 @@ export default {
       changeSpecificCategory: 'Changer de catégorie spécifique',
       uploadTitle: 'Glissez-déposez votre fichier ici pour le téléverser',
       uploadDescription:
-        "Prise en charge du téléversement unique ou en lot. Pour RAGFlow en local : 1 Go max par téléversement, jusqu'à 32 fichiers. Pour cloud.ragflow.io : 10 Mo max par fichier uploadDescription128 fichiers au total.",
+        "Prise en charge du téléversement unique ou en lot. Pour une installation locale : 1 Go max par téléversement, jusqu'à 32 fichiers. Pour le service hébergé : 10 Mo max par fichier uploadDescription128 fichiers au total.",
       chunk: 'Segment',
       bulk: 'En masse',
       cancel: 'Annuler',
       rerankModel: 'Modèle de réordonnancement',
       rerankPlaceholder: 'Veuillez sélectionner',
-      rerankTip: `Optionnel. Si vide, RAGFlow utilisera une combinaison de similarités pondérées. Un modèle de réordonnancement remplace la similarité vectorielle. Attention, cela augmente le temps de réponse.`,
+      rerankTip: `Optionnel. Si vide, la plateforme utilisera une combinaison de similarités pondérées. Un modèle de réordonnancement remplace la similarité vectorielle. Attention, cela augmente le temps de réponse.`,
       topK: 'Top-K',
       topKTip: 'Nombre de segments à envoyer au modèle de réordonnancement.',
       delimiter: 'Délimiteur de texte',
@@ -458,7 +459,7 @@ export default {
         'Utilisé avec la méthode "générale". Si désactivé, les tableaux sont convertis en paires clé-valeur. Sinon, ils deviennent des tableaux HTML divisés toutes les 12 lignes.',
       autoKeywords: 'Mots-clés automatiques',
       autoKeywordsTip:
-        'Extrait automatiquement N mots-clés par segment. Consomme des tokens. Voir la documentation : https://ragflow.io/docs/dataset_configuration#content-enhancement-configuration.',
+        'Extrait automatiquement N mots-clés par segment. Consomme des tokens.',
       autoQuestions: 'Questions automatiques',
       autoQuestionsTip:
         "Extrait automatiquement N questions par segment. N'interrompt pas l'analyse si une erreur survient. Consomme aussi des tokens. Voir la documentation.",
@@ -571,7 +572,7 @@ export default {
       testSetting: 'Paramètres',
       retrievalTesting: 'Test de récupération',
       retrievalTestingDescription:
-        'Effectuez un test de récupération pour vérifier si RAGFlow peut retrouver le contenu pertinent pour le LLM.',
+        'Effectuez un test de récupération pour vérifier si la plateforme peut retrouver le contenu pertinent pour le LLM.',
       Parse: 'Analyser',
       noTestResultsForRuned:
         "Aucun résultat pertinent trouvé. Essayez d'ajuster votre requête ou les paramètres.",
@@ -633,7 +634,7 @@ export default {
       // Les contenus HTML comme "book", "laws", etc. sont laissés en l'état pour ne pas altérer leur structure technique.
       useRaptor: 'Utiliser RAPTOR pour améliorer la récupération',
       useRaptorTip:
-        "Activez RAPTOR pour les questions nécessitant plusieurs étapes. Voir https://ragflow.io/docs/knowledge_compilation/built_in_templates_and_dedicated_configuration#tree pour plus d'informations.",
+        'Activez RAPTOR pour les questions nécessitant plusieurs étapes.',
       prompt: 'Prompt',
       promptTip:
         'Décrivez la tâche attendue du LLM, ses réponses, ses exigences, etc. Utilisez `/` pour afficher les variables disponibles.',
@@ -772,7 +773,7 @@ export default {
       tableColumnModeAuto: 'Auto',
       tableColumnModeManual: 'Manuel',
       tableColumnModeAutoDescription:
-        'Toutes les colonnes sont incluses dans le texte du segment et stockées comme métadonnées (par défaut RAGFlow).',
+        'Toutes les colonnes sont incluses dans le texte du segment et stockées comme métadonnées (comportement par défaut).',
       tableColumnRoles: 'Rôles des colonnes',
       tableColumnRolesTip:
         "Choisissez quelles colonnes inclure dans le texte du segment (indexé pour la recherche vectorielle et plein texte), dans les métadonnées uniquement (filtrable), ou les deux. Les modifications s'appliquent aux nouvelles analyses ; ré-analysez les documents existants pour appliquer les rôles.",
@@ -972,8 +973,8 @@ Applicable lorsque vous avez besoin que le LLM résume le document entier.
       topN: 'Top N',
       topNTip: `Tous les segments avec un score de similarité supérieur au 'seuil de similarité' ne seront pas forcément envoyés au LLM. Cela sélectionne les 'Top N' segments parmi ceux récupérés.`,
       variable: 'Variable',
-      variableTip: `Utilisé avec les API de gestion d'assistant de chat de RAGFlow, les variables aident à développer des stratégies de prompt système plus flexibles. Les variables définies seront utilisées dans le 'Prompt système' comme partie des prompts pour le LLM. {knowledge
-      } est une variable spéciale réservée représentant les segments récupérés des bases de connaissances spécifiées. Toutes les variables doivent être entourées d'accolades {} dans le 'Prompt système'. Voir https://ragflow.io/docs/chat_configuration#system-prompt pour plus de détails.`,
+      variableTip: `Utilisé avec les API de gestion d'assistant de chat de la plateforme, les variables aident à développer des stratégies de prompt système plus flexibles. Les variables définies seront utilisées dans le 'Prompt système' comme partie des prompts pour le LLM. {knowledge
+      } est une variable spéciale réservée représentant les segments récupérés des bases de connaissances spécifiées. Toutes les variables doivent être entourées d'accolades {} dans le 'Prompt système'.`,
       add: 'Ajouter',
       key: 'Clé',
       optional: 'Optionnel',
@@ -1042,7 +1043,7 @@ Applicable lorsque vous avez besoin que le LLM résume le document entier.
       extensionTitle: 'Extension Chrome',
       tokenError: "Veuillez d'abord créer une clé API.",
       betaError:
-        "Veuillez d'abord obtenir une clé API RAGFlow depuis la page Paramètres système.",
+        "Veuillez d'abord obtenir une clé API de la plateforme depuis la page Paramètres système.",
       searching: 'Recherche en cours...',
       parsing: 'Analyse en cours',
       uploading: 'Téléversement en cours',
@@ -1057,7 +1058,6 @@ Applicable lorsque vous avez besoin que le LLM résume le document entier.
       multiTurn: 'Optimisation multi-tours',
       multiTurnTip:
         "Optimise les requêtes utilisateur en utilisant le contexte d'une conversation multi-tours. Lorsqu'activé, cela consomme des tokens LLM supplémentaires.",
-      howUseId: "Comment utiliser l'ID de discussion ?",
       description: "Description de l'assistant",
       descriptionPlaceholder: 'ex. Un assistant de chat pour CV.',
       useKnowledgeGraph: 'Utiliser le graphe de connaissances',
@@ -1520,9 +1520,9 @@ Exemple : Virtual Hosted Style`,
       sitemapRestrictPdfToDomainTip:
         'Ne suivre que les liens PDF hébergés sur le même domaine que le sitemap.',
       sitemapUserAgentTip:
-        'En-tête User-Agent envoyé avec chaque requête. Laissez vide pour utiliser RAGFlow-SitemapConnector/1.0.',
+        'En-tête User-Agent envoyé avec chaque requête. Laissez vide pour utiliser le User-Agent par défaut.',
       sitemapBatchSizeTip:
-        'Nombre de pages récupérées et envoyées à RAGFlow par lot.',
+        'Nombre de pages récupérées et envoyées à la plateforme par lot.',
       azure_devopsDescription:
         'Connectez Azure DevOps pour synchroniser les fichiers du dépôt et les pull requests.',
       bitbucketDescription:
@@ -1908,7 +1908,7 @@ Exemple : Virtual Hosted Style`,
       directory: 'Répertoire',
       uploadTitle: 'Glissez-déposez votre fichier ici pour téléverser',
       uploadDescription:
-        "Prise en charge du téléversement de fichiers uniques ou en lot. Pour un déploiement local de RAGFlow : la taille totale des fichiers par téléversement est limitée à 1 Go, avec un maximum de 32 fichiers par lot. Il n'y a pas de limite sur le nombre total de fichiers par compte. Pour cloud.ragflow.io, la taille totale des fichiers par téléversement est limitée à 10 Mo, chaque fichier ne devant pas dépasser 10 Mo, avec un maximum de 128 fichiers par compte.",
+        "Prise en charge du téléversement de fichiers uniques ou en lot. Pour un déploiement local : la taille totale des fichiers par téléversement est limitée à 1 Go, avec un maximum de 32 fichiers par lot. Il n'y a pas de limite sur le nombre total de fichiers par compte. Pour le service hébergé, la taille totale des fichiers par téléversement est limitée à 10 Mo, chaque fichier ne devant pas dépasser 10 Mo, avec un maximum de 128 fichiers par compte.",
       local: 'Téléversements locaux',
       s3: 'Téléversements S3',
       preview: 'Aperçu',
@@ -2330,7 +2330,6 @@ Exemple : Virtual Hosted Style`,
       input: 'Entrée',
       output: 'Sortie',
       parameter: 'Paramètre',
-      howUseId: "Comment utiliser l'ID agent ?",
       content: 'Contenu',
       operationResults: "Résultats de l'opération",
       autosaved: 'Sauvegardé automatiquement',
@@ -3091,7 +3090,6 @@ Mémoire procédurale : compétences acquises, habitudes et procédures automati
     },
     admin: {
       loginTitle: "Console d'administration",
-      title: 'RAGFlow',
       confirm: 'Confirmer',
       close: 'Fermer',
       yes: 'Oui',
