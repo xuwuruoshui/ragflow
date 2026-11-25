@@ -78,7 +78,7 @@ services:
   infinity:
     profiles:
       - infinity
-    image: infiniflow/infinity:v0.7.5-x64-v3
+    image: ${IMAGE_REGISTRY_PREFIX}infinity:v0.7.5-x64-v3
     volumes:
       - infinity_data:/var/infinity
       - ./infinity_conf.toml:/infinity_conf.toml
@@ -270,7 +270,7 @@ services:
       - metadata-MySQL
       - metadata-MYSQL
     # mysql:5.7 linux/arm64 image is unavailable.
-    image: mysql:8.0.40
+    image: ${IMAGE_REGISTRY_PREFIX}mysql:8.0.40
     env_file: .env
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
@@ -328,7 +328,7 @@ services:
 
 
   minio:
-    image: pgsty/silo:RELEASE.2026-08-06T00-00-00Z
+    image: ${IMAGE_REGISTRY_PREFIX}silo:RELEASE.2026-08-06T00-00-00Z
     command: ["server", "--console-address", ":9001", "/data"]
     ports:
       - ${MINIO_PORT}:9000
@@ -358,7 +358,7 @@ services:
     # tags such as kvrocks/kvrocks:latest (== 2.0.6) carry a TTL contract bug
     # that breaks the RunTracker CAS lease, and they reject the Redis-style
     # maxmemory/maxmemory-policy settings.
-    image: apache/kvrocks:2.16.0
+    image: ${IMAGE_REGISTRY_PREFIX}kvrocks:2.16.0
     # Kvrocks' config file does not expand ${ENV} and its CLI rejects
     # `--requirepass` as a flag, so the entrypoint renders the config (including
     # the password from REDIS_PASSWORD) at startup. `user: "0"` lets it write the
@@ -409,7 +409,7 @@ services:
 
 
   nats:
-    image: nats:2.14.2
+    image: ${IMAGE_REGISTRY_PREFIX}nats:2.14.2
     ports:
       - ${EXPOSE_NATS_PORT:-4222}:4222
       - ${EXPOSE_NATS_MONITORING_PORT:-8222}:8222

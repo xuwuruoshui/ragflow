@@ -152,7 +152,9 @@ The Go services use NATS JetStream for ingestion, synchronization, memory, and k
 - `RAGFLOW_DEV_MODE`
   Set to `true` only for development checkouts that intentionally use a development migration marker. Keep it `false` in production.
 - `RAGFLOW_IMAGE`
-  The Go Docker image used by `docker-compose.yml`. Use an official Go image tag documented in its release notes, or use the locally built `ragflow:go-local` tag. The RAGFlow Docker image does not include embedding models.
+  The application image used by `docker-compose.yml`. It defaults to `talent-cap-rag:local` under `IMAGE_REGISTRY_PREFIX`.
+- `IMAGE_REGISTRY_PREFIX`
+  Registry and namespace for the default application and its Infinity, MySQL, Silo, Kvrocks, and NATS dependencies. Include the trailing slash. Each configured image must be available under its full tag locally or in the configured registry.
 
 ### Local embedding service
 
